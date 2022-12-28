@@ -45,11 +45,11 @@ const BottomTabNavigator = () => {
 
 const styles = StyleSheet.create({
     bottomTabStyle: {
-        /*backgroundColor: ,
-        height:
-        borderTopLeftRadius:
-        borderTopRightRadius:
-        */
+        backgroundColor:"green" ,
+        height:"8%",
+        borderTopLeftRadius:RFValue(25),
+        borderTopRightRadius:RFValue(25),
+        
         overflow: "hidden",
         position: "absolute"
 
