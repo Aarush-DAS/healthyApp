@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View,TextInput,TouchableOpacity } from 'react-native';
+import { Text, View,TextInput,TouchableOpacity, Alert } from 'react-native';
 import DropDownPicker from "react-native-dropdown-picker";
 import firebase from "firebase";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -35,10 +35,30 @@ async _loadFontsAsync() {
   }
 
 
-    
+   async addRoutine(){
+        if (this.state.routine && this.state.time){
+            let routineData={
+                routine:this.state.routine,
+                time:this.state.time,
+                routine_uid:firebase.aut().currentUser.uid,
+            }
+        
+
+        await firebase.database().ref('/routine/'+(Math.random().toString(36).slice(2)))
+            .set(routineData)
+            .then(function(snapShot){
+                
+            })
+            this.props.navigation.navigate("DashBoard")
+        }
+        else{Alert.alert('Error', 'fill all the field')}
+    }
     render() {
         return (
             <View>
+                <SafeAreaView/>
+                //title
+                //logo
             <DropDownPicker
             items={[
              {label:  "food",value:"food"},
@@ -69,11 +89,17 @@ async _loadFontsAsync() {
         })
         }
             />
-            <TextInput>
-            
-            </TextInput>
+            <TextInput
+            style={styles.textinput}
+              onChangeText={text => this.setState({ Time: text })}
+              placeholder={"TIME"}
+              placeholderTextColor="#FFFFFF"
+              
+            />
              <TouchableOpacity>
-    
+             style={[styles.button, { marginTop: 30 }]}
+              onPress={() => this.addRoutine()}
+              <Text style={styles.buttonText}>Submit</Text>
              </TouchableOpacity>
             </View>
        

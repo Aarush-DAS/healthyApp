@@ -37,7 +37,7 @@ const BottomTabNavigator = () => {
         activeColor={"#ee8249"}
         inactiveColor={"gray"}
     >
-        <Tab.Screen name="DashBoard" component={Dashboard} options={{headerShown:false}}/>
+        <Tab.Screen name="DashBoard" component={DashBoard} options={{headerShown:false}}/>
         <Tab.Screen name="Routine" component={Routine} options={{headerShown:false}}/>
     </Tab.Navigator>
 }
