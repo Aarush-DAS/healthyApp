@@ -6,20 +6,19 @@ import Registration from "./screen/registration";
 import DrawerNavigator from "./navigation/DrawerNavigator";
 
 import * as firebase from "firebase";
-import { firebaseConfig } from "./config";
-
+import { firebaseConfig } from "./Config";
 
 if(!firebase.apps.length){
   firebase.initializeApp(firebaseConfig)
   
 }else {firebase.app}
-const stack=createStackNavigator();
+const Stack=createStackNavigator();
 
 const StackNav = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Login" component={LoginScreen}/>
-      <Stack.Screen name="registration" component={registrationScreen}/>
+      <Stack.Screen name="registration" component={Registration}/>
       <Stack.Screen name="Drawer" component={DrawerNavigator}/>
     </Stack.Navigator>
   )

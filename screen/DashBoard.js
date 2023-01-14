@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
-
+import firebase from "firebase";
 export default class DashBoard extends Component {
     getRoutine=()=>{firebase.database().ref("/users/" + userCredential.user.uid)
     .get({

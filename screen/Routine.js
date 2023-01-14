@@ -6,7 +6,6 @@ import { RFValue } from "react-native-responsive-fontsize";
 import * as Font from "expo-font";
 
 import * as SplashScreen from 'expo-splash-screen';
-import { withTheme } from 'react-native-elements';
 SplashScreen.preventAutoHideAsync();
 
 let customFonts = {
